@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#a9162a">
+    <meta name="description" content="An interactive, entirely static demonstration of a Neural Cellular Automaton.">
+    <title>R + S</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" href="RS16x16.png" sizes="16x16" type="image/png">
+</head>
+
+<body>
+    <main>
+        <section class="hero" aria-labelledby="page-title">
+            <div class="hero-copy">
+                <p class="eyebrow"><span>NEURAL CELLULAR AUTOMATON</span><span class="eyebrow-line"></span><span> S and R are forever in love.</span></p>
+                <h1 id="page-title">R + S<br><em>FOREVER</em></h1>
+                <p class="intro">For our 8 month anniversary, i trained pixels to learn that our love is forever, and they try to show that now. You can erase most of them or draw over them, but each pixel learned to change, so that the messages stays. <br><br>I love you so much, and am so grateful to have you, the last 8 months whit you have been amazing, and i cant wait for our whole future! <br> You are the best</p>
+            </div>
+            <section class="demo-card" aria-label="Interactive model">
+                <div class="demo-heading">
+                    <h2>Let the pixels present the message:</h2>
+                </div>
+                <div class="canvas-wrap">
+                    <canvas id="simulation" width="16" height="16"
+                        aria-label="Animated Neural Cellular Automaton simulation"></canvas>
+                </div>
+                <div class="tools" aria-label="Drawing tools">
+                    <div class="tool-picker" role="group" aria-label="Select a drawing tool">
+                        <button class="tool-button is-selected" type="button" data-tool="paint" aria-pressed="true"
+                            aria-label="Paint with brush">Brush</button>
+                        <button class="tool-button" type="button" data-tool="erase" aria-pressed="false"
+                            aria-label="Erase cells">Eraser</button>
+                        <button class="tool-button" type="button" data-tool="seed" aria-pressed="false"
+                            aria-label="Place a seed">Seed</button>
+                    </div>
+                    <label class="color-control" for="paint-color"><span>COLOR</span><input id="paint-color"
+                            type="color" value="#ff4000" aria-label="Brush color"></label>
+                    <label class="random-control" for="random-color"><input id="random-color"
+                            type="checkbox"><span>Random color</span></label>
+                    <label class="radius-control" for="brush-radius"><span>BRUSH SIZE</span><input id="brush-radius"
+                            type="range" min="1" max="8" value="3" aria-label="Brush size"><b
+                            id="radius-value">3</b></label>
+                </div>
+                <div class="controls">
+                    <button class="button button-primary" id="play-button" type="button" disabled>
+                        <span class="button-icon" id="play-icon" aria-hidden="true">▶</span><span
+                            id="play-label">Start</span>
+                    </button>
+                    <button class="button button-quiet" id="reset-button" type="button" disabled>↺
+                        <span>Reset</span></button>
+                    <label class="speed-control" for="speed">
+                        <span>SPEED</span><input id="speed" type="range" min="1" max="8" value="2"
+                            aria-label="Simulation speed"><b id="speed-value">2×</b>
+                    </label>
+                </div>
+                <div class="demo-footer"><span> look here 👉</span><span>I love you so much</span></div>
+            </section>
+        </section>
+        <section class="story" id="about">
+            <div class="story-content">
+                <h2>How it works</h2>
+                <p>Each cell looks at its neighbors and follows a small set of rules learned during training. Together,
+                    the cells grow and recreate the shapes you see.</p>
+            </div>
+        </section>
+        <section class="model-loader" aria-labelledby="loader-title">
+            <div>
+                <h2 id="loader-title">Little poem</h2>
+                <p>You are the only one for me,<br>whit noone else i want to be.<br>You made my life so much better<br>I cant wait to send you gifts per letter<br>I will love you now and forever<br>will find my way to you whatsoever</p>
+            </div>
+            <label class="button button-outline upload-button" for="model-file">Try another model <span
+                    aria-hidden="true">↑</span></label>
+            <input id="model-file" type="file" accept=".json,application/json" hidden>
+        </section>
+    </main>
+</body>
+
+</html>
